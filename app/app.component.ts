@@ -6,7 +6,6 @@ import {Component} from 'angular2/core';
     <div>
     <h3>{{contact.firstName}} {{contact.lastName}}</h3>
     <p>Email address: {{contact.email}}</p>
-    <p>Phone Number: {{contact.phone}}</p>
 </div>
 `,
 })
