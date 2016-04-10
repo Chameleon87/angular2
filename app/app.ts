@@ -1,9 +1,11 @@
 import {Component} from 'angular2/core';
-import { Home } from './app/home/Home';
+import { Nav } from '../app/nav/nav';
+import { Home } from '../app/home/home';
 
 @Component({
     selector: 'app',
-    templateUrl: './app/home/home.html',
+    templateUrl: 'index.html',
+    directives: [Home, Nav]   
 })
 
 export class App { 
