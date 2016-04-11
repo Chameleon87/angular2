@@ -6,5 +6,5 @@ import {Component} from 'angular2/core';
 })
 
 export class About{
-    public contact = {firstName:"Jesse", lastName:"Hodge", email:"Jessehodge1987@gmail.com", phone:"512-412-9170"};
+    
 }
