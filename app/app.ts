@@ -1,11 +1,27 @@
 import {Component} from 'angular2/core';
-import { Nav } from '../app/nav/nav';
-import { Home } from '../app/home/home';
+import {RouteConfig, RouterOutlet, RouterLink} from 'angular2/router';
+
+import { Home } from '../app/home/home.component';
 
 @Component({
     selector: 'app',
-    templateUrl: 'index.html',
-    directives: [Home, Nav]   
+    directives: [Home],
+    template: `
+    <nav>
+        <ul>
+            <li><a router-link="home">Home</a></li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+    `,
+    styles: `
+    li {
+        display: inline;
+    }`
 })
 
 export class App { 
