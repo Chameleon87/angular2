@@ -1,29 +1,36 @@
 import {Component} from 'angular2/core';
-import {RouteConfig, RouterOutlet, RouterLink} from 'angular2/router';
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
 import { Home } from '../app/home/home.component';
+import { About } from '../app/about/about';
+import { Contact } from '../app/contact/contact';
 
 @Component({
     selector: 'app',
-    directives: [Home],
+    styles: [`
+        nav li {
+            display: inline;
+        }
+    `],
     template: `
     <nav>
         <ul>
-            <li><a router-link="home">Home</a></li>
-            <li>About</li>
-            <li>Contact</li>
+            <li><a [routerLink]="['Home']">Home</a></li>
+            <li><a [routerLink]="['About']">About</a></li>
+            <li><a [routerLink]="['Contact']">Contact</a></li>
         </ul>
     </nav>
-    <main>
-        <router-outlet></router-outlet>
-    </main>
+    <router-outlet></router-outlet>
     `,
-    styles: `
-    li {
-        display: inline;
-    }`
+    directives: [ROUTER_DIRECTIVES]
 })
 
+    @RouteConfig([
+        { path: '/home', name: 'Home', component: Home },
+        { path: '/about', name: 'About', component: About },
+        { path: '/contact', name: 'Contact', component: Contact }
+])
+
 export class App { 
-    public contact = {firstName:"Jesse", lastName:"Hodge", email:"Jessehodge1987@gmail.com", phone:"512-412-9170"};
+    
 }
