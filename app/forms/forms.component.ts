@@ -1,18 +1,31 @@
 import {Component} from 'angular2/core';
-import {NgForm} from 'angular2/common';
+import {
+    ControlGroup,
+    FormBuilder,
+    FORM_DIRECTIVES,
+    NgForm,
+    Validators
+} from 'angular2/common';
 
 import {Profile} from '../models/profile'
 
 @Component({
-    selector: 'my-form',
-    templateUrl: '../app/forms/MyForm.html'
+    selector: 'login-page',
+    templateUrl: '../app/forms/forms.html'
 })
 
 export class Form{
 
-    model = new Profile(1, 'Jesse', 'Hodge', '512-412-9170');
+    loginForm: ControlGroup; 
 
-    submitted = false;
-
-    onsubmit() { this.submitted =  true }
+    constructor(fb: FormBuilder) {
+        this.loginForm = fb.group({
+            email: ["", Validators.required],
+            password: ["", Validators.required]
+        });
+    }
+    doLogin(event) {
+        console.log(this.loginForm.value);
+        event.preventDefault();
+    }
 }
