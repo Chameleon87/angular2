@@ -1,8 +1,10 @@
 import {Component} from 'angular2/core';
+import { Form } from '../forms/forms.component';
 
 @Component({
     selector: 'contact',
-    templateUrl: '../app/contact/contact.html'
+    templateUrl: '../app/contact/contact.html',
+    directives: [Form]
 })
 
 export class Contact{
