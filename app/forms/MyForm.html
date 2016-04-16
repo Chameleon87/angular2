@@ -1,0 +1,17 @@
+<div class="Container">
+    <div>
+        <h1>My Form</h1>
+        <form *ngIf="active" (ngSubmit)="onSubmit()" #MyForm = "ngForm">
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" class="form-control" required
+                [(ngModel)]="model.firstName"
+                ngControl="firstName" #name="ngForm">
+            </div>
+            
+            <button type="submit" class="btn btn-default" [disabled]="!heroForm.form.valid">Submit</button>
+        </form>
+    </div>
+</div>
+
+           
