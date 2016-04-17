@@ -17,12 +17,13 @@ import { Contact } from '../app/contact/contact';
         </ul>
     </nav>
     <router-outlet></router-outlet>
+</div>
     `,
     directives: [ROUTER_DIRECTIVES]
 })
 
     @RouteConfig([
-        { path: '/home', name: 'Home', component: Home },
+        { path: '/home', name: 'Home', component: Home, useAsDefault: true },
         { path: '/about', name: 'About', component: About },
         { path: '/contact', name: 'Contact', component: Contact }
 ])
