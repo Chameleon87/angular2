@@ -1,0 +1,12 @@
+.container{
+    color: white;
+}
+.container h2{
+    color: white;
+}
+.header {
+    text-align: center;
+}
+.content{
+    position: absolute;
+}
