@@ -7,12 +7,8 @@ import { Contact } from '../app/contact/contact';
 
 @Component({
     selector: 'app',
-    styles: [`
-        nav li {
-            display: inline;
-        }
-    `],
     template: `
+<div class="container">
     <nav>
         <ul>
             <li><a [routerLink]="['Home']">Home</a></li>
